@@ -1,0 +1,70 @@
+
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<h3>Find By Mobile number</h3>
+
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Enter your Mobile no :</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="mobile" name="mobile" #mdcontrol="ngModel" required />
+      <small id="idHelp" class="form-text text-muted" *ngIf="mdcontrol.touched && mdcontrol.invalid" ><font color="red" >
+          *Mobile no. should be filled.</font></small>
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+  </form>
+</div>
+
+<table border="2"><tr><th>Account No</th>
+            <th>Mobile No</th>
+          <th>Account Holder Name</th>
+        <th>Account Balance</th>
+      <th colspan="2">Action</th></tr>
+      <tr><td>{{ob.id}}</td>
+      <td>{{ob.mobile}}</td>
+    <td>{{ob.accHolder}}</td>
+  <td>{{ob.balance}}</td>
+<td><button type="button" class="btn btn-success" (click)='deleteCustomer()'>Delete</button></td>
+<td><button type="button" class="btn btn-success" (click)='onUpdate()'>Update</button></td></tr></table>
+
+
+<div *ngIf="status">
+  <form (ngSubmit)="updateCustomer()">
+    <div class="form-group">
+      <label for="name">Account Id:-</label>
+      <input type="text" class="form-control" id="mobile" required [(ngModel)]="ob.id" name="id"  #idcontrol="ngModel" required />
+     
+     
+                <small id="idHelp" class="form-text text-muted" *ngIf="idcontrol.touched && idcontrol.invalid" ><font color="red" >
+                    *Id should be filled.</font></small>
+    </div>
+    <div class="form-group">
+      <label for="name">Mobile No:-</label>
+      <input type="text" class="form-control" id="mobile" required [(ngModel)]="ob.mobile" name="mobile" #mobilecontrol="ngModel" required/>
+      <small id="idHelp" class="form-text text-muted" *ngIf="mobilecontrol.touched && mobilecontrol.invalid" ><font color="red" >
+          *Id should be filled.</font></small>
+       
+    </div>
+    <div class="form-group">
+      <label for="name">Account Holder Name:-</label>
+      <input type="text" class="form-control" id="mobile" required [(ngModel)]="ob.accHolder" name="name" #namecontrol="ngModel" required/>
+      <small id="idHelp" class="form-text text-muted" *ngIf="namecontrol.touched && namecontrol.invalid" ><font color="red" >
+          *Name should be filled.</font></small>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Account Balance:-</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="ob.balance" name="balance" #balancecontrol="ngModel" required/>
+      <small id="idHelp" class="form-text text-muted" *ngIf="balancecontrol.touched && balancecontrol.invalid" ><font color="red" >
+          *Name should be filled.</font></small>
+    </div>
+    
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+</div>
+</div>
+
+    

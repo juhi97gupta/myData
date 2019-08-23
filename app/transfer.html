@@ -1,0 +1,27 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<form (ngSubmit)="transferMoney()">
+        <div class="form-group">
+          <label for="name">Enter Mobile number from which money transferred:-</label>
+          <input type="text" class="form-control" id="mobile" required [(ngModel)]="from" name="mobile"   #mobilecontrol="ngModel" required />
+      
+     
+                <small id="idHelp" class="form-text text-muted" *ngIf="mobilecontrol.touched && mobilecontrol.invalid" ><font color="red" >
+                    *Mobile Number should be filled.</font></small>
+        </div>
+        <div class="form-group">
+          <label for="name">Enter Mobile number to which money transferred:-</label>
+          <input type="text" class="form-control" id="mobile" required [(ngModel)]="to" name="mobile"  #mobile1control="ngModel" required/>
+          <small id="idHelp" class="form-text text-muted" *ngIf="mobile1control.touched && mobile1control.invalid" ><font color="red" >
+              *Mobile Number should be filled.</font></small>
+          </div>
+
+          <div class="form-group">
+                <label for="name">Enter Amount:-</label>
+                <input type="text" class="form-control" id="mobile" required [(ngModel)]="amount" name="mobile" #amountcontrol="ngModel" required/>
+                <small id="idHelp" class="form-text text-muted" *ngIf="amountcontrol.touched && amountcontrol.invalid" ><font color="red" >
+                    *Amount must be filled.</font></small>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+              </div>

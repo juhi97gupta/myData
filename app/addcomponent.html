@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="p-3 mb-2 bg-dark text-white">
+<div style="padding-left:80px; padding-right:80px"   class="border border-secondary">
+<form #validForm="ngForm" (ngSubmit) = "AddData()" align:center>
+<br>
+
+        <div class="form-group">
+                <label for="exampleInputempId">Name:</label>
+                <input type="text" class="form-control" id="exampleInputempId" aria-describedby="nameHelp" placeholder="Enter Name"  
+                     name="Name" id="Name" [(ngModel)]="Name" #namecontrol="ngModel" required />
+                <small id="idHelp" class="form-text text-muted" *ngIf="namecontrol.touched && namecontrol.invalid" ><font color="red" >*Name should be filled.</font></small>
+              </div>
+     
+
+        <div class="form-group">
+     <label for="exampleInputempName">Address:</label>
+     <input type="text" class="form-control" id="exampleInputempName" aria-describedby="addressHelp" placeholder="Enter Address"  
+                        name="Address" id="Address" [(ngModel)]="Address" #Addresscontrol="ngModel" required />
+     <small id="idHelp" class="form-text text-muted" *ngIf="Addresscontrol.touched && Addresscontrol.invalid"> <font color="red" >*Address should be filled.</font></small>
+</div>
+    
+
+
+<div class="form-group">
+ <label for="exampleInputempName">PinCode</label>
+ <input type="text" class="form-control" id="exampleInputempSalary" aria-describedby="pincodeHelp" placeholder="Enter PinCode"  
+         name="PinCode" id="PinCode" [(ngModel)]="PinCode" #PinCodecontrol="ngModel" required />
+<small id="idHelp" class="form-text text-muted" *ngIf="PinCodecontrol.touched && PinCodecontrol.invalid" ><font color="red" >*PinCode should be filled.</font></small>
+</div>
+     <br>
+        <div class="text-center">
+    <tr>
+      <button> <input type="submit" class= "btn btn-light" value="Save" [disabled]="validForm.invalid"  /> </button>&nbsp;&nbsp;&nbsp;
+      <button>  <input type="reset" class="btn btn-light" value="clear data"  /> </button> 
+    </tr></div>
+  </form>  <br> <br>
+<div class="alert alert-success" role="alert"> 
+  You have Entered: "name" : "{{Name}}", "address:  "{{Address}}" , "PinCode":  "{{PinCode}}" <br>
+  Form Validation Status: "{{Status}}"
+</div>
+</div>
+</div>
+</div>
